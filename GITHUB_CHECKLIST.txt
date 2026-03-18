@@ -1,0 +1,184 @@
+✅ GITHUB PUSH CHECKLIST
+========================
+
+Follow these steps in order to push your project to GitHub:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BEFORE YOU START
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+☐ Make sure you have a GitHub account (free at github.com)
+☐ You have your username: mugilancrajan
+☐ You have your email: mchinnapparajan@gmail.com
+☐ PowerShell is installed on your computer (it is by default)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP-BY-STEP CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣  CREATE REPOSITORY ON GITHUB
+
+   ☐ Open: https://github.com/new
+   ☐ Repository name: kpi-report-automation
+   ☐ Description: Weekly KPI Report Automation - Python data pipeline
+   ☐ Visibility: Select PUBLIC
+   ☐ Leave UNCHECKED: Initialize with README
+   ☐ Leave UNCHECKED: Add .gitignore
+   ☐ Leave UNCHECKED: Add license
+   ☐ Click: "Create repository"
+
+   ⏱️  Time needed: 2-3 minutes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2️⃣  OPEN POWERSHELL AS ADMINISTRATOR
+
+   ☐ Press: Windows key + X
+   ☐ Select: Windows PowerShell (Administrator)
+   ☐ Click: Yes (if prompted about admin)
+
+   ⏱️  Time needed: 30 seconds
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3️⃣  NAVIGATE TO PROJECT FOLDER
+
+   ☐ Copy this command and paste it into PowerShell:
+
+      cd "C:\Users\mugil\Coding Projects\kpi-report-automation"
+
+   ☐ Press: Enter
+
+   ⏱️  Time needed: 10 seconds
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4️⃣  RUN THE AUTOMATION SCRIPT
+
+   ☐ Copy this command and paste it into PowerShell:
+
+      powershell -ExecutionPolicy Bypass -File PUSH_TO_GITHUB.ps1
+
+   ☐ Press: Enter
+
+   The script will start and show progress messages:
+   ✓ Configuring Git
+   ✓ Adding files
+   ✓ Creating commit
+   ✓ Connecting to GitHub
+   ✓ Pushing to GitHub
+
+   ⏱️  Time needed: 30-60 seconds
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5️⃣  AUTHENTICATE WITH GITHUB
+
+   Option A: Git Credential Manager (Easiest)
+   ☐ A popup will appear
+   ☐ Click: "Authorize"
+   ☐ Sign in to GitHub if prompted
+   ☐ Click: "Authorize GitHub Desktop"
+   ☐ Done! The script will continue
+
+   Option B: Personal Access Token (If Option A doesn't work)
+   ☐ Open: https://github.com/settings/tokens
+   ☐ Click: "Generate new token"
+   ☐ Check these boxes:
+      ✓ repo
+      ✓ read:user
+      ✓ write:repo_hook
+   ☐ Click: "Generate token" at bottom
+   ☐ COPY the token immediately
+   ☐ Go back to PowerShell
+   ☐ When asked for password, PASTE the token
+   ☐ Press: Enter
+
+   ⏱️  Time needed: 1-2 minutes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+6️⃣  VERIFY SUCCESS
+
+   ☐ Look for message: "✅ SUCCESS! Your project has been pushed to GitHub!"
+
+   ☐ Open your browser
+
+   ☐ Go to: https://github.com/mugilancrajan/kpi-report-automation
+
+   ☐ You should see:
+      ✓ README.md displayed
+      ✓ All your files listed
+      ✓ Commit history visible
+
+   ⏱️  Time needed: 1 minute
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPTIONAL: MAKE IT STAND OUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   ☐ Go to: https://github.com/mugilancrajan/kpi-report-automation
+
+   ☐ Click: "About" (top right)
+
+   ☐ Add topics:
+      ✓ python
+      ✓ data-analytics
+      ✓ streamlit
+      ✓ github-actions
+      ✓ automation
+
+   ☐ Click: "Save changes"
+
+   ⏱️  Time needed: 1 minute
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SHARE YOUR PROJECT! 🎉
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your project is now live at:
+
+   https://github.com/mugilancrajan/kpi-report-automation
+
+Share this link with:
+   ✓ Recruiters
+   ✓ Potential employers
+   ✓ LinkedIn profile
+   ✓ Portfolio websites
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problem: "ExecutionPolicy" error
+→ ☐ Run PowerShell as Administrator
+→ ☐ Try the command again
+
+Problem: "Permission denied"
+→ ☐ Use Personal Access Token instead of default password
+→ ☐ Follow Step 5, Option B
+
+Problem: Script stops with an error
+→ ☐ Take a screenshot of the error
+→ ☐ Try again
+→ ☐ If it persists, run manually: git push -u origin main
+
+Problem: Can't find the script
+→ ☐ Make sure you're in correct folder
+→ ☐ Check that PUSH_TO_GITHUB.ps1 exists there
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TOTAL TIME NEEDED: About 10-15 minutes
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Most of that is creating the repo and authenticating.
+The actual push takes less than 1 minute!
+
+Ready? Start with Step 1! ✅
+

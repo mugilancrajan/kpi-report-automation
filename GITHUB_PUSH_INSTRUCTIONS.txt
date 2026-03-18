@@ -1,0 +1,130 @@
+📤 AUTOMATED GITHUB PUSH - INSTRUCTIONS
+============================================
+
+Your script is ready! Follow these 3 simple steps:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: CREATE EMPTY REPOSITORY ON GITHUB (Manual - 1 minute)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Go to: https://github.com/new
+
+2. Fill in:
+   Repository name: kpi-report-automation
+   Description: Weekly KPI Report Automation - Python data pipeline with Streamlit dashboard
+   Visibility: Public (so recruiters can see it)
+
+3. IMPORTANT: DO NOT check any boxes for README, gitignore, or license
+   (Your project already has these)
+
+4. Click: "Create repository"
+
+5. Copy the URL shown (it will be like: https://github.com/mugilancrajan/kpi-report-automation.git)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 2: RUN THE AUTOMATION SCRIPT (Automatic - 30 seconds)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open PowerShell as Administrator and run:
+
+cd "C:\Users\mugil\Coding Projects\kpi-report-automation"
+powershell -ExecutionPolicy Bypass -File PUSH_TO_GITHUB.ps1
+
+The script will:
+✓ Configure git with your name and email
+✓ Add all project files
+✓ Create an initial commit
+✓ Connect to your GitHub repository
+✓ Push everything automatically
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 3: AUTHENTICATE WHEN PROMPTED (Manual - 1 minute)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+When the script tries to push, you'll be asked to authenticate.
+
+OPTION A: Use GitHub CLI (Easiest)
+   PowerShell will prompt: "Authorize Git Credential Manager"
+   Click: "Authorize" and follow the browser prompts
+   That's it!
+
+OPTION B: Use Personal Access Token (If above doesn't work)
+   1. Go to: https://github.com/settings/tokens
+   2. Click: "Generate new token"
+   3. Select these scopes:
+      ✓ repo (full control of private repositories)
+      ✓ read:user
+      ✓ write:repo_hook
+   4. Scroll down and click: "Generate token"
+   5. COPY the token (it won't show again!)
+   6. When prompted for password, PASTE the token
+   7. Press Enter
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VERIFICATION: Check Your GitHub
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+After the script finishes, go to:
+   https://github.com/mugilancrajan/kpi-report-automation
+
+You should see:
+✓ All your files and folders
+✓ README.md displayed nicely
+✓ Your project description
+✓ Green checkmarks on all files
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FINAL STEP: Make It Portfolio-Ready
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+On your GitHub repo page:
+
+1. Click "About" (top right)
+2. Add topics:
+   - python
+   - data-analytics
+   - streamlit
+   - github-actions
+   - automation
+3. (Optional) Click the star icon to pin it to your profile
+
+NOW SHARE THE LINK:
+   https://github.com/mugilancrajan/kpi-report-automation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ "ExecutionPolicy" error
+→ Run PowerShell as Administrator
+→ Then run the command again
+
+❌ "Permission denied" during push
+→ Make sure you're logged into GitHub
+→ Use a Personal Access Token (see STEP 3, Option B)
+
+❌ "fatal: not a git repository"
+→ Make sure you're in the correct directory
+→ cd "C:\Users\mugil\Coding Projects\kpi-report-automation"
+
+❌ Repository already exists error
+→ The script handles this automatically
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOU'RE ALL SET!
+
+The automation script does everything. Just:
+1. Create the empty repo on GitHub (2 minutes)
+2. Run the PowerShell script
+3. Authenticate when asked
+4. ✅ Done!
+
+Ready? Let's go! 🚀
+
