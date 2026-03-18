@@ -60,9 +60,14 @@ $repo = "kpi-report-automation"
 $remoteUrl = "https://github.com/$username/$repo.git"
 
 # Check if remote already exists
-if (git remote get-url origin 2>$null) {
-    Write-Host "⚠️  Remote already exists, updating..." -ForegroundColor Yellow
-    git remote remove origin
+try {
+    $existingRemote = git remote get-url origin 2>$null
+    if ($existingRemote) {
+        Write-Host "⚠️  Remote already exists, updating..." -ForegroundColor Yellow
+        git remote remove origin
+    }
+} catch {
+    # Remote doesn't exist, continue
 }
 
 git remote add origin $remoteUrl
@@ -108,4 +113,3 @@ try {
     Write-Host "Then try the push again:" -ForegroundColor Yellow
     Write-Host "   git push -u origin main" -ForegroundColor Cyan
 }
-
