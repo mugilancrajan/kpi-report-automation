@@ -16,9 +16,25 @@
 
 This project demonstrates a complete data analytics workflow suitable for small businesses, startups, and teams managing customer leads. It's a **production-ready template** that can be adapted to real company data exports (Salesforce, HubSpot, Pipedrive, etc.). The pipeline is fully automated, reproducible, and requires no external APIs or paid tools.
 
+## Quick Demo
+
+Open `example_outputs/report.html` in your browser to see a sample generated report.
+
 ## How to Run
 
-### 1. Set Up Python Environment
+### Quick Start (Recommended)
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python run_all.py
+streamlit run app.py
+```
+
+### Step-by-Step
+
+#### 1. Set Up Python Environment
 
 ```powershell
 python -m venv .venv
@@ -26,7 +42,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### 2. Generate Sample Data
+#### 2. Generate Sample Data
 
 ```powershell
 python src/generate_sample_data.py
@@ -34,7 +50,7 @@ python src/generate_sample_data.py
 
 Outputs: `sample_leads_raw.csv` (2,500 sample leads)
 
-### 3. Clean Data & Compute KPIs
+#### 3. Clean Data & Compute KPIs
 
 ```powershell
 python src/clean_and_kpi.py
@@ -42,7 +58,7 @@ python src/clean_and_kpi.py
 
 Outputs: `outputs/cleaned_leads.csv`, `outputs/weekly_kpis.csv`
 
-### 4. Build Report & Charts
+#### 4. Build Report & Charts
 
 ```powershell
 python src/build_report.py
@@ -50,7 +66,7 @@ python src/build_report.py
 
 Outputs: `outputs/report.html`, `outputs/charts/*.png`
 
-### 5. (Optional) Launch Interactive Dashboard
+#### 5. (Optional) Launch Interactive Dashboard
 
 ```powershell
 streamlit run app.py
@@ -59,6 +75,8 @@ streamlit run app.py
 Then open http://localhost:8501 in your browser.
 
 ## Outputs
+
+The `example_outputs/` folder contains a sample generated report for quick reference.
 
 - **`sample_leads_raw.csv`** – Raw synthetic lead data
 - **`outputs/cleaned_leads.csv`** – Cleaned and standardized dataset
@@ -71,10 +89,8 @@ Then open http://localhost:8501 in your browser.
 
 ## Screenshots
 
-_Add your own screenshots here:_
-
-- **Report Summary**: `assets/report_summary.png`
-- **Dashboard**: `assets/dashboard.png`
+- **Report Summary**: ![Report Summary](assets/report_summary.png)
+- **Dashboard**: ![Dashboard](assets/dashboard.png)
 
 ## Next Improvements
 
@@ -122,4 +138,3 @@ This project is provided as-is for educational and commercial use.
 ---
 
 **Questions?** This is a template designed to be modified for your specific data and business needs.
-

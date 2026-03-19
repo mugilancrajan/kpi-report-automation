@@ -7,6 +7,7 @@ and creates a professional HTML report with embedded visualizations.
 
 import pandas as pd
 import matplotlib
+
 matplotlib.use("Agg")  # Use non-interactive backend
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
@@ -17,22 +18,22 @@ from datetime import datetime
 def create_charts(df_weekly):
     """
     Create line charts for key weekly metrics.
-    
+
     Args:
         df_weekly: DataFrame with weekly KPIs
     """
     # Ensure charts directory exists
     Path("outputs/charts").mkdir(parents=True, exist_ok=True)
-    
+
     # Parse week column as datetime
     df_weekly["week"] = pd.to_datetime(df_weekly["week"])
-    
+
     # Chart styling
     plt.style.use("default")
     fig_size = (12, 5)
     line_color = "#2E86AB"
     grid_alpha = 0.3
-    
+
     # Chart 1: Leads per week
     fig, ax = plt.subplots(figsize=fig_size)
     ax.plot(df_weekly["week"], df_weekly["leads"], marker="o", color=line_color, linewidth=2, markersize=6)
@@ -46,7 +47,7 @@ def create_charts(df_weekly):
     plt.savefig("outputs/charts/leads.png", dpi=150, bbox_inches="tight")
     plt.close()
     print("  ✅ Generated: leads.png")
-    
+
     # Chart 2: Conversion rate per week
     fig, ax = plt.subplots(figsize=fig_size)
     ax.plot(df_weekly["week"], df_weekly["conversion_rate"], marker="o", color="#A23B72", linewidth=2, markersize=6)
@@ -60,7 +61,7 @@ def create_charts(df_weekly):
     plt.savefig("outputs/charts/conversion_rate.png", dpi=150, bbox_inches="tight")
     plt.close()
     print("  ✅ Generated: conversion_rate.png")
-    
+
     # Chart 3: Average response time per week
     fig, ax = plt.subplots(figsize=fig_size)
     ax.plot(df_weekly["week"], df_weekly["avg_response_min"], marker="o", color="#F18F01", linewidth=2, markersize=6)
@@ -74,7 +75,7 @@ def create_charts(df_weekly):
     plt.savefig("outputs/charts/avg_response.png", dpi=150, bbox_inches="tight")
     plt.close()
     print("  ✅ Generated: avg_response.png")
-    
+
     # Chart 4: Revenue per week
     fig, ax = plt.subplots(figsize=fig_size)
     ax.plot(df_weekly["week"], df_weekly["revenue"], marker="o", color="#06A77D", linewidth=2, markersize=6)
@@ -93,16 +94,16 @@ def create_charts(df_weekly):
 def build_html_report(df_weekly):
     """
     Build an HTML report with embedded charts and summary metrics.
-    
+
     Args:
         df_weekly: DataFrame with weekly KPIs
     """
     # Parse week column
     df_weekly["week"] = pd.to_datetime(df_weekly["week"])
-    
+
     # Get latest week data
     latest = df_weekly.iloc[-1] if len(df_weekly) > 0 else None
-    
+
     # Build HTML
     html = """
 <!DOCTYPE html>
@@ -317,34 +318,34 @@ def build_html_report(df_weekly):
 </body>
 </html>
     """
-    
+
     return html
 
 
 def main():
     """Main execution function."""
     print("📊 Building report...")
-    
+
     # Read weekly KPIs
     print("  Reading weekly KPI data...")
     df_weekly = pd.read_csv("outputs/weekly_kpis.csv")
-    
+
     # Create charts
     print("🎨 Creating charts...")
     create_charts(df_weekly)
-    
+
     # Build HTML report
     print("📝 Generating HTML report...")
     html_content = build_html_report(df_weekly)
-    
+
     # Save report with UTF-8 encoding to handle emoji
     with open("outputs/report.html", "w", encoding="utf-8") as f:
         f.write(html_content)
-    
+
     print("\n✅ Report generation complete!")
     print(f"  📄 Report: outputs/report.html")
     print(f"  📈 Charts: outputs/charts/")
-    
+
 
 if __name__ == "__main__":
     main()

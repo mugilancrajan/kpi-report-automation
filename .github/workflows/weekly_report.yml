@@ -1,24 +1,22 @@
 name: Weekly KPI Report Pipeline
 
 on:
+  workflow_dispatch:
   schedule:
     # Run every Monday at 8 AM UTC
-    - cron: '0 8 * * 1'
-  workflow_dispatch:
+    - cron: "0 8 * * 1"
 
 jobs:
   generate-report:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-      
+          python-version: "3.11"
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -34,7 +32,7 @@ jobs:
         run: python src/build_report.py
       
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: kpi-report
           path: |
@@ -43,14 +41,3 @@ jobs:
             outputs/cleaned_leads.csv
             outputs/charts/
           retention-days: 30
-      
-      - name: Create workflow summary
-        run: |
-          echo "## ✅ KPI Report Generated Successfully" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Report Outputs:**" >> $GITHUB_STEP_SUMMARY
-          echo "- 📄 HTML Report: \`outputs/report.html\`" >> $GITHUB_STEP_SUMMARY
-          echo "- 📊 Weekly KPIs: \`outputs/weekly_kpis.csv\`" >> $GITHUB_STEP_SUMMARY
-          echo "- 🧹 Cleaned Data: \`outputs/cleaned_leads.csv\`" >> $GITHUB_STEP_SUMMARY
-          echo "- 📈 Charts: \`outputs/charts/\`" >> $GITHUB_STEP_SUMMARY
-
